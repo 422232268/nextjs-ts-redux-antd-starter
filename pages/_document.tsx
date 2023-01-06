@@ -8,10 +8,12 @@ class MyDocument extends Document {
     const originalRenderPage = ctx.renderPage
     try {
       const initialProps = await Document.getInitialProps(ctx)
+
       ctx.renderPage = () =>
         originalRenderPage({
-          enhanceApp: (App) => (props) => sheet.collectStyles(),
+          enhanceApp: (App) => (props) => sheet.collectStyles(<App {...props} />),
         })
+
       return {
         ...initialProps,
         styles: (
@@ -26,4 +28,5 @@ class MyDocument extends Document {
     }
   }
 }
+
 export default MyDocument

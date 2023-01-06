@@ -1,6 +1,13 @@
-import '../styles/globals.css'
-import type { AppProps } from 'next/app'
+import React, { FC } from 'react'
+import { AppProps } from 'next/app'
+import { wrapper } from 'src/redux'
+import Layout from 'src/components/Layout'
+import 'antd/dist/reset.css'
 
-export default function App({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
-}
+const WrappedApp: FC<AppProps> = ({ Component, pageProps }) => (
+  <Layout>
+    <Component {...pageProps} />
+  </Layout>
+)
+
+export default wrapper.withRedux(WrappedApp)
