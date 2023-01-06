@@ -1,6 +1,7 @@
 import { NextPage } from 'next'
-const Home: NextPage = () => {
- return <div>Hello nextjs-ts-redux-antd-starter</div>
-}
+import {HomeComponent} from '../src/components/home/index'
 
-export default Home
+const Home: NextPage = () => {
+  return <HomeComponent />
+ }
+ export default Home
