@@ -16,8 +16,9 @@ const NavMenu: FC<Props> = ({ menuItems }) => {
   return (
     <Menu mode="horizontal" defaultSelectedKeys={['/']} selectedKeys={[router.pathname]}>
       {menuItems?.map((item) => (
-        <Menu.Item key={item.key}>
-          <Link href={item.pathname}>{item.title}</Link>
+        <Menu.Item key={item.key} onClick={() => onClick(item)}>
+          {item.title}
+          {/* <Link href={item.pathname}>{item.title}</Link> */}
         </Menu.Item>
       ))}
     </Menu>
