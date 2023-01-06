@@ -2,8 +2,9 @@
   "name": "nextjs-ts-redux-antd-starter",
   "version": "0.0.0",
   "private": true,
+  "main": "main.js",
   "scripts": {
-    "dev": "next dev",
+    "dev": "electron . | next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
@@ -26,6 +27,7 @@
     "@types/react-dom": "^18.0.10",
     "antd": "^5.1.2",
     "axios": "^1.2.2",
+    "electron": "^22.0.0",
     "eslint": "^8.31.0",
     "eslint-config-next": "13.1.1",
     "i18next": "^22.4.8",
