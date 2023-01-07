@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next'
 import Link from 'src/components/Link'
 
 const FooterWrapper = styled.footer`
-  position: absolute;
+  position: fixed;
   bottom: 0;
   display: flex;
   justify-content: center;
