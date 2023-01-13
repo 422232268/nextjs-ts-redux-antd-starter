@@ -31,7 +31,8 @@ export const GlobalStyle = createGlobalStyle`
 		line-height: 1;
 	}
 	html, body {
-		background: #ccc;;
+		background: rgba(0,0,0,0.7);
+    color: #fff;
 	}
 	ol, ul {
 		list-style: none;

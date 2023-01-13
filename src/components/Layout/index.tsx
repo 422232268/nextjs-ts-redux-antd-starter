@@ -6,7 +6,7 @@ import Header from 'src/components/Header'
 import Footer from 'src/components/Footer'
 
 const MainWrapper = styled.div`
-  text-align: center;
+  // text-align: center;
   padding-bottom: 70px;
 `
 
@@ -14,9 +14,9 @@ const MainWrapper = styled.div`
 
 const Layout: FC<{ children: React.ReactNode }> = ({ children }) => (
   <>
-    <Header menuItems={menuItems} />
+    {/* <Header menuItems={menuItems} /> */}
     <MainWrapper>{children}</MainWrapper>
-    <Footer />
+    {/* <Footer /> */}
   </>
 )
 
