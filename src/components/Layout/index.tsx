@@ -14,7 +14,7 @@ const MainWrapper = styled.div`
 
 const Layout: FC<{ children: React.ReactNode }> = ({ children }) => (
   <>
-    <Header menuItems={menuItems} />
+    {/* <Header menuItems={menuItems} /> */}
     <MainWrapper>{children}</MainWrapper>
     <Footer />
   </>

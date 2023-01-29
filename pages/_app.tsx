@@ -8,6 +8,7 @@ import { AppProps } from 'next/app'
 import { wrapper } from 'src/redux'
 import Layout from 'src/components/Layout'
 import i18n from '../src/i18n'
+import '../styles/globals.css'
 
 const theme = {
   colors: {
