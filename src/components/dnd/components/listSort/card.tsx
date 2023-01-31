@@ -7,6 +7,7 @@ import React, { useRef, useMemo } from 'react';
 import { XYCoord } from 'dnd-core';
 import { DragSourceMonitor, DropTargetMonitor, useDrag, useDrop } from 'react-dnd';
 import ItemTypes from './type';
+import styles from "./index.module.scss";
 
 const Card = ({ bg, text, index, moveCard, id, updateDragAndDrop, dropCardList }: any) => {
   const ref = useRef<HTMLDivElement>(null);
@@ -106,7 +107,7 @@ const Card = ({ bg, text, index, moveCard, id, updateDragAndDrop, dropCardList }
    * 使用 drag 和 drop 对 ref 进行包裹，则组件既可以进行拖拽也可以接收拖拽组件
    */
   return (
-    <div ref={drag(drop(ref)) as any} style={style} className='card_drag'>
+    <div ref={drag(drop(ref)) as any} style={style} className={style['card_drag']}>
       {text}
     </div>
   );

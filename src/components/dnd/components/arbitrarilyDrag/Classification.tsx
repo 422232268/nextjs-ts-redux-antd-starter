@@ -1,5 +1,6 @@
 import React from 'react';
 import { useDrop } from 'react-dnd';
+import styles from "./index.module.scss";
 
 function Classification({ type, title }: any) {
   const [{ isOver, canDrop }, drop] = useDrop(
@@ -24,10 +25,10 @@ function Classification({ type, title }: any) {
   );
 
   return (
-    <div className='word_drop_container'>
-      <div className='word_drop_text'>{title}</div>
+    <div className={styles['word_drop_container']}>
+      <div className={styles['word_drop_text']}>{title}</div>
       <div
-        className='word_drop'
+        className={styles['word_drop']}
         ref={drop}
         style={{ backgroundColor: canDrop ? 'rgba(7,193,96,0.3)' : 'transparent' }}
       ></div>

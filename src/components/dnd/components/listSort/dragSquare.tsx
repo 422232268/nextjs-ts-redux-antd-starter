@@ -1,8 +1,9 @@
 import Box from './box';
+import styles from "./index.module.scss";
 
 export default function DragSquare({ dragCardList, dropCardList, updateDragAndDrop }: any) {
   return (
-    <div className='card_drag_group'>
+    <div className={styles['card_drag_group']}>
       {dragCardList.map((each: any, index: any) => (
         <Box
           index={index}

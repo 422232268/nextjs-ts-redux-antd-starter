@@ -2,7 +2,7 @@ import React from 'react';
 import { DndProvider } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
 import Classification from './Classification';
-import './index.module.scss';
+import styles from "./index.module.scss";
 import { WORD_TYPE } from './type';
 import Word from './word';
 
@@ -45,15 +45,15 @@ class WordClassification extends React.Component {
   render() {
     return (
       <DndProvider backend={HTML5Backend}>
-        <div className='word-container'>
+        <div className={styles['word-container']}>
           <h2>任意拖拽</h2>
-          <div className='word_drop_group'>
+          <div className={styles['word_drop_group']}>
             {Classifications.map((each, index) => (
               <Classification {...each} key={'classification' + index} />
             ))}
           </div>
 
-          <div className='word_drag_group'>
+          <div className={styles['word_drag_group']}>
             {WORDS.map((each, index) => {
               let newEach = { ...each, id: 'drag' + index };
               return <Word {...newEach} key={'word' + index} />;

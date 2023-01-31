@@ -3,6 +3,7 @@ import Knight from './knight';
 import { DndProvider } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
 import BoardSquare from './boardSquare';
+import styles from "./index.module.scss";
 
 function renderSquare(i: any, knightPosition: any, moveKnight: any) {
   const x = i % 8;

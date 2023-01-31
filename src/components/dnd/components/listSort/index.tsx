@@ -3,7 +3,7 @@ import { DndProvider } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
 import DragSquare from './dragSquare';
 import DropSquare from './dropSquare';
-import './index.module.scss';
+import styles from "./index.module.scss";
 
 const CARD_INIT_ARR = [
   { id: 1, text: 'Apple', bg: 'red' },
@@ -32,7 +32,7 @@ class CardSort extends React.Component<any, any> {
     const { dragCardList, dropCardList } = this.state;
     return (
       <DndProvider backend={HTML5Backend}>
-        <div className='scard-move-container'>
+        <div className={styles['scard-move-container']}>
           <h2>列表排序(数量无限，有顺移)</h2>
           <DropSquare dragCardList={dragCardList} dropCardList={dropCardList} updateDragAndDrop={this.updateDragAndDrop} />
           <DragSquare dropCardList={dropCardList} dragCardList={dragCardList} updateDragAndDrop={this.updateDragAndDrop} />

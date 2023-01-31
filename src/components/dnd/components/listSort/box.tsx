@@ -1,6 +1,7 @@
 import React from 'react';
 import { DragSourceMonitor, useDrag } from 'react-dnd';
 import ItemType from './type';
+import styles from "./index.module.scss";
 
 let id = 1;
 

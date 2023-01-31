@@ -2,7 +2,7 @@ import React from 'react';
 import { DndProvider } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
 import Card from './card';
-import './index.module.scss';
+import styles from "./index.module.scss";
 
 const CARD_INIT_ARR = [
   {
@@ -52,9 +52,9 @@ class CardSort extends React.Component<any, any> {
   render() {
     return (
       <DndProvider backend={HTML5Backend}>
-        <div className='card-container'>
+        <div className={styles['card-container']}>
           <h2>预置卡片排序</h2>
-          <div className='card_drag_group'>
+          <div className={styles['card_drag_group']}>
             {this.state.cardList.map((each: any, index: any) => (
               <Card changePosition={this.changePosition} index={index} {...each} key={'drag_card' + index} />
             ))}

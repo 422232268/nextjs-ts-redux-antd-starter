@@ -1,6 +1,7 @@
 import type { CSSProperties, FC } from 'react';
 import { useDrag } from 'react-dnd';
 import { ItemTypes } from './type';
+import styles from "./index.module.scss";
 
 const Knight: FC = () => {
   const [{ isDragging }, drag]: any = useDrag(() => ({

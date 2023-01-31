@@ -1,5 +1,6 @@
 import { useDrop } from 'react-dnd';
 import DragCard from './dragCard';
+import styles from "./index.module.scss";
 
 export default function DropPlace({ innerDrag, updateCardList, index, id, updateDragAndDrop }: any) {
   const [{ isOver }, drop] = useDrop({
@@ -15,7 +16,7 @@ export default function DropPlace({ innerDrag, updateCardList, index, id, update
   });
 
   return (
-    <div className='card_drop' ref={drop} style={{ backgroundColor: isOver ? 'rgba(7,193,96,0.3)' : 'transparent' }}>
+    <div className={styles['card_drop']} ref={drop} style={{ backgroundColor: isOver ? 'rgba(7,193,96,0.3)' : 'transparent' }}>
       {innerDrag && <DragCard {...innerDrag} isHovering={isOver} updateDragAndDrop={updateDragAndDrop} />}
     </div>
   );

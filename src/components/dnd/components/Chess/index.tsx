@@ -1,6 +1,6 @@
 import React from 'react';
 import Board from './board';
-import './index.module.scss';
+import styles from "./index.module.scss";
 
 class ChessDemo extends React.Component<any, any> {
   constructor(props: any) {
@@ -18,7 +18,7 @@ class ChessDemo extends React.Component<any, any> {
   render() {
     const { knightPosition } = this.state;
     return (
-      <div className='chess-container'>
+      <div className={styles['chess-container']}>
         <Board knightPosition={knightPosition} moveKnight={this.moveKnight} />
       </div>
     );

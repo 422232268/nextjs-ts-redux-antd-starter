@@ -1,6 +1,7 @@
 import { CSSProperties, FC, useRef, useState } from 'react';
 import { useDrag, DragPreviewImage } from 'react-dnd';
 import apple from '../../assets/apple.png';
+import styles from "./index.module.scss";
 
 const DragPreviewImg = () => {
   const [{ isDragging }, drag, preview] = useDrag({
@@ -14,7 +15,7 @@ const DragPreviewImg = () => {
     <>
       <DragPreviewImage connect={preview} src={apple} />
       <div
-        className='card_drag'
+        className={styles['card_drag']}
         ref={drag}
         style={{
           opacity: isDragging ? 0.5 : 1,

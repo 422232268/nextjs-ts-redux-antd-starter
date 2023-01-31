@@ -2,6 +2,7 @@ import { relative } from 'path';
 import { useEffect, useState } from 'react';
 import { useDrag } from 'react-dnd';
 import { getEmptyImage } from 'react-dnd-html5-backend';
+import styles from "./index.module.scss";
 
 const cardList = [
   {
@@ -65,20 +66,20 @@ const Drag = () => {
   };
 
   return (
-    <div className='card_drag_box'>
-      <div className='card_drag_list' style={{ opacity: isDragBegin && !isDragging ? 0 : 1 }}>
+    <div className={styles['card_drag_box']}>
+      <div className={styles['card_drag_list']} style={{ opacity: isDragBegin && !isDragging ? 0 : 1 }}>
         {cardList.map((each) => (
-          <div className='card_drag' key={each.id}>
+          <div className={styles['card_drag']} key={each.id}>
             {each.text}
             <input type='checkbox' checked={isSelectItem(each.id)} onChange={() => updateList(each)} />
           </div>
         ))}
       </div>
-      <div className='card_drag_preview' ref={drag}>
-        <div className='card_drag_preview_inner'>
+      <div className={styles['card_drag_preview']} ref={drag}>
+        <div className={styles['card_drag_preview_inner']}>
           {selectList.map((each) => (
             <div
-              className='card_drag'
+              className={styles['card_drag']}
               style={{
                 opacity: !each.selected ? 0 : isDragging ? 0.2 : 1,
                 position: 'absolute',

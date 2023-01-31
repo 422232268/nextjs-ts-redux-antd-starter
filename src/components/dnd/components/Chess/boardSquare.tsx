@@ -3,6 +3,7 @@ import Square from './square';
 import { ItemTypes } from './type';
 import { useDrop } from 'react-dnd';
 import { canMoveKnight } from './utils';
+import styles from "./index.module.scss";
 
 function Overlay({ color }: any) {
   return (

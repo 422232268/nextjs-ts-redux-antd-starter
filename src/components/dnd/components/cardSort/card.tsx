@@ -1,5 +1,6 @@
 import { CSSProperties, FC, useRef, useState } from 'react';
 import { useDrag, useDrop } from 'react-dnd';
+import styles from "./index.module.scss";
 
 const Card = ({ text, id, index, changePosition }: any) => {
   const ref = useRef(null);
@@ -31,7 +32,7 @@ const Card = ({ text, id, index, changePosition }: any) => {
 
   return (
     <div
-      className='card_drag'
+      className={styles['card_drag']}
       ref={drag(drop(ref)) as any} // 这样写可以让它即接收拖拽又实现拖拽
       style={{
         opacity: isDragging ? 0.3 : 1,

@@ -2,7 +2,7 @@ import React from 'react';
 import { DndProvider } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
 import DragPreviewImg from './dragPreviewImg';
-import './index.module.scss';
+import styles from "./index.module.scss";
 
 class DragPreview extends React.Component<any, any> {
   constructor(props: any) {
@@ -13,7 +13,7 @@ class DragPreview extends React.Component<any, any> {
   render() {
     return (
       <DndProvider backend={HTML5Backend}>
-        <div className='drag-preview'>
+        <div className={styles['drag-preview']}>
           <h2>拖拽图片预览</h2>
           <DragPreviewImg />
         </div>

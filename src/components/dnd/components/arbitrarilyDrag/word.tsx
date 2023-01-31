@@ -1,5 +1,6 @@
 import { CSSProperties, FC, useRef, useState } from 'react';
 import { useDrag } from 'react-dnd';
+import styles from "./index.module.scss";
 
 const Word: FC = ({ type, text, id, ...props }: any) => {
   const [offsetX, setOffsetX] = useState(0);
@@ -30,7 +31,7 @@ const Word: FC = ({ type, text, id, ...props }: any) => {
 
   return (
     <div
-      className='word_drag'
+      className={styles['word_drag']}
       id={id}
       ref={drag}
       style={{

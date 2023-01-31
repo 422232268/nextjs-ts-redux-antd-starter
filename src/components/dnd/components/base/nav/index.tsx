@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { routes } from '../../routes';
 import './index.scss';
+import styles from './index.module.scss';
 
 const Nav = () => {
   let navigate = useNavigate();
@@ -11,7 +12,7 @@ const Nav = () => {
   };
 
   return (
-    <div className='nav-container'>
+    <div className={styles['nav-container']}>
       {routes.map((each, index) => (
         <div
           className={`link_btn ${location.pathname === each.url && 'link_btn--active'}`}

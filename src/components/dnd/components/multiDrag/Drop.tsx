@@ -1,5 +1,7 @@
 import { useCallback } from 'react';
 import { useDrop } from 'react-dnd';
+import styles from "./index.module.scss";
+
 export default function DropSquare({ dropCardList, updateDragAndDrop }: any) {
   const [{ canDrop }, drop] = useDrop({
     accept: 'DragDropBox',
@@ -14,7 +16,7 @@ export default function DropSquare({ dropCardList, updateDragAndDrop }: any) {
 
 
   return (
-    <div className='card_drop_group' ref={drop}>
+    <div className={styles['card_drop_group']} ref={drop}>
     </div>
   );
 }
