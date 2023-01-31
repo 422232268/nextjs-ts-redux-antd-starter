@@ -9,6 +9,8 @@ import { wrapper } from 'src/redux'
 import Layout from 'src/components/Layout'
 import i18n from '../src/i18n'
 import '../styles/globals.css'
+import {DndProvider} from 'react-dnd'
+import {HTML5Backend} from 'react-dnd-html5-backend'
 
 const theme = {
   colors: {
@@ -23,9 +25,11 @@ const WrappedApp: FC<AppProps> = ({ Component, pageProps }) => {
       <I18nextProvider i18n={i18n}>
         <GlobalStyle />
         <ThemeProvider theme={theme}>
-          <Layout>
-            <Component {...pageProps} />
-          </Layout>
+          <DndProvider backend={HTML5Backend}>
+            <Layout>
+              <Component {...pageProps} />
+            </Layout>
+          </DndProvider>
         </ThemeProvider>
       </I18nextProvider>
     </Provider>
