@@ -10,7 +10,7 @@ import MultiDrag from '../../src/components/dnd/components/multiDrag';
 const App = () => {
   return (
    <div>
-    <CardAssemble />
+    <DragPreviewImg />
    </div>
   );
 };
