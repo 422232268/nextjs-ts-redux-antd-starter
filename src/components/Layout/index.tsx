@@ -32,11 +32,11 @@ const menuItems = [
 ]
 
 const Layout: FC<{ children: React.ReactNode }> = ({ children }) => (
-  <>
+  <div style={{ display: 'flex'}}>
     <Header menuItems={menuItems} />
     <MainWrapper>{children}</MainWrapper>
     <Footer />
-  </>
+  </div>
 )
 
 export default Layout
