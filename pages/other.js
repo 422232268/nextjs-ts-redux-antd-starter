@@ -1,12 +1,12 @@
 import { useEffect } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import Page from '../src/components/Page'
-import { addCount } from '../src/store/count/action'
-import { wrapper } from '../src/store/store'
-import { serverRenderClock, startClock } from '../src/store/tick/action'
+import Page from '../components/Page'
+import { addCount } from '../store/count/action'
+import { wrapper } from '../store/store'
+import { serverRenderClock, startClock } from '../store/tick/action'
 
-const Index = (props) => {
+const Other = (props) => {
   useEffect(() => {
     const timer = props.startClock()
 
@@ -15,10 +15,10 @@ const Index = (props) => {
     }
   }, [props])
 
-  return <Page title="Index Page" linkTo="/other" />
+  return <Page title="Other Page" linkTo="/" />
 }
 
-export const getStaticProps = wrapper.getStaticProps((store) => () => {
+export const getServerSideProps = wrapper.getServerSideProps((store) => () => {
   store.dispatch(serverRenderClock(true))
   store.dispatch(addCount())
 })
@@ -30,4 +30,4 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-export default connect(null, mapDispatchToProps)(Index)
+export default connect(null, mapDispatchToProps)(Other)
