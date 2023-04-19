@@ -1,4 +1,5 @@
 import { createStore, applyMiddleware, combineReducers } from 'redux'
+import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit'
 import { HYDRATE, createWrapper } from 'next-redux-wrapper'
 import thunkMiddleware from 'redux-thunk'
 import count from './count/reducer'
