@@ -1,11 +1,16 @@
+import React from 'react';
+import {useSelector} from 'react-redux'
+
+
 const pad = (n) => (n < 10 ? `0${n}` : n)
 const format = (t) =>
   `${pad(t.getUTCHours())}:${pad(t.getUTCMinutes())}:${pad(t.getUTCSeconds())}`
 
-export default function Clock({ lastUpdate, light }) {
+export default function Clock() {
+  const {tick} = useSelector((store) => store.tick)
   return (
-    <div className={light ? 'light' : ''}>
-      {format(new Date(lastUpdate))}
+    <div className={tick.light ? 'light' : ''}>
+      {format(new Date(tick.lastUpdate))}
       <style jsx>{`
         div {
           padding: 15px;
