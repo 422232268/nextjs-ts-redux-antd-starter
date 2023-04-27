@@ -1,5 +1,4 @@
-// import { createStore, applyMiddleware, combineReducers } from 'redux'
-import { configureStore, ThunkAction, Action, combineReducers } from '@reduxjs/toolkit'
+import { createStore, applyMiddleware, combineReducers } from 'redux'
 import { HYDRATE, createWrapper } from 'next-redux-wrapper'
 import thunkMiddleware from 'redux-thunk'
 import count from './count/reducer'
@@ -13,14 +12,11 @@ const bindMiddleware = (middleware) => {
   return applyMiddleware(...middleware)
 }
 
-// const combinedReducer = combineReducers({
-//   count,
-//   tick,
-// })
-const rootReducer = combineReducers({
+const combinedReducer = combineReducers({
   count,
   tick,
-});
+})
+
 const reducer = (state, action) => {
   if (action.type === HYDRATE) {
     const nextState = {
@@ -35,11 +31,7 @@ const reducer = (state, action) => {
 }
 
 const initStore = () => {
-  // return createStore(reducer, bindMiddleware([thunkMiddleware]))
-  return configureStore({
-    reducer: rootReducer,
-    middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat([thunkMiddleware]),
-  })
+  return createStore(reducer, bindMiddleware([thunkMiddleware]))
 }
 
 export const wrapper = createWrapper(initStore)

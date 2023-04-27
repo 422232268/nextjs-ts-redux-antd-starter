@@ -1,12 +1,10 @@
-import { createAction } from '@reduxjs/toolkit'
-
 export const tickActionTypes = {
   TICK: 'TICK',
 }
-const addAction = createAction('TICK');
+
 export const serverRenderClock = (isServer) => (dispatch) => {
   return dispatch({
-    type: addAction,
+    type: tickActionTypes.TICK,
     light: !isServer,
     ts: Date.now(),
   })
