@@ -1,7 +1,9 @@
-import { configureStore } from '@reduxjs/toolkit'
+import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit'
 import StuReducer from './reducer'
 import storage from 'redux-persist/lib/storage';
 import { persistReducer } from 'redux-persist';
+import counterReducer from './features/counter/counterSlice'
+
 
 const persistConfig = {
   key: 'root',
@@ -13,10 +15,20 @@ const persistConfig = {
 const persistedReducer = persistReducer(persistConfig, StuReducer);
 
 const store = configureStore({
-    reducer:persistedReducer
+    reducer:{
+      counter: counterReducer,
+      persistedReducer
+    }
 })
 
-export type RootState = ReturnType<typeof store.getState>
+export type AppState = ReturnType<typeof store.getState>
 export type AppDispatch = typeof store.dispatch
+
+export type AppThunk<ReturnType = void> = ThunkAction<
+  ReturnType,
+  AppState,
+  unknown,
+  Action<string>
+>
 
 export default store

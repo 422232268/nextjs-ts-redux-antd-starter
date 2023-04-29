@@ -1,91 +1,22 @@
-import { NextPage } from 'next'
-import { Button, Space, ConfigProvider, Divider } from 'antd'
-const Home: NextPage = () => {
+import type { NextPage } from 'next'
+import Head from 'next/head'
+
+import Counter from '../src/redux/features/counter/Counter'
+import styles from '../styles/Home.module.css'
+
+const IndexPage: NextPage = () => {
   return (
-    <>
-      <Space.Compact direction="vertical" size={'large'}>
-        <Button type="primary">primary</Button>
-        <Divider></Divider>
-        <Button type="dashed">dashed</Button>
-        <Divider></Divider>
-        <Button>ghost</Button>
-        <Divider></Divider>
-        <Button type="text">text</Button>
-        <Divider></Divider>
-        <Button type="link">link</Button>
-      </Space.Compact>
-
-      <ConfigProvider
-        theme={{
-          token: {
-            colorPrimary: '#2fbaa1',
-          },
-        }}
-      >
-        <Space.Compact direction="vertical" size={'large'}>
-          <Button type="primary">primary</Button>
-          <Divider></Divider>
-
-          <Button type="dashed">dashed</Button>
-          <Divider></Divider>
-
-          <Button>ghost</Button>
-          <Divider></Divider>
-
-          <Button type="text">text</Button>
-          <Divider></Divider>
-
-          <Button type="link">link</Button>
-        </Space.Compact>
-      </ConfigProvider>
-      <ConfigProvider
-        theme={{
-          token: {
-            colorPrimary: '#b9263d',
-          },
-        }}
-      >
-        <Space.Compact direction="vertical" size={'large'}>
-          <Button type="primary">primary</Button>
-          <Divider></Divider>
-
-          <Button type="dashed">dashed</Button>
-          <Divider></Divider>
-
-          <Button>ghost</Button>
-          <Divider></Divider>
-
-          <Button type="text">text</Button>
-          <Divider></Divider>
-
-          <Button type="link">link</Button>
-        </Space.Compact>
-      </ConfigProvider>
-      <ConfigProvider
-        theme={{
-          token: {
-            colorPrimary: '#edc688',
-          },
-        }}
-      >
-        <Space.Compact direction="vertical" size={'large'}>
-          <Button type="primary">primary</Button>
-          <Divider></Divider>
-
-          <Button type="dashed">dashed</Button>
-          <Divider></Divider>
-
-          <Button>ghost</Button>
-          <Divider></Divider>
-
-          <Button type="text">text</Button>
-          <Divider></Divider>
-
-          <Button type="link">link</Button>
-        </Space.Compact>
-      </ConfigProvider>
-    </>
+    <div className={styles.container}>
+      <Head>
+        <title>Redux Toolkit</title>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+      <header className={styles.header}>
+        <img src="/logo.svg" className={styles.logo} alt="logo" />
+        <Counter />
+      </header>
+    </div>
   )
 }
 
-export default Home
+export default IndexPage
