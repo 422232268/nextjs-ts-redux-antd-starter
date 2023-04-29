@@ -3,6 +3,8 @@ import StuReducer from './reducer'
 import storage from 'redux-persist/lib/storage';
 import { persistReducer } from 'redux-persist';
 import counterReducer from './features/counter/counterSlice'
+import { HYDRATE } from 'next-redux-wrapper'
+import {createWrapper} from './myWrapper'
 
 
 const persistConfig = {
@@ -21,6 +23,15 @@ const store = configureStore({
     }
 })
 
+export function makeStore() {
+  return configureStore({
+    reducer:{
+      counter: counterReducer,
+      persistedReducer
+    },
+  });
+}
+
 export type AppState = ReturnType<typeof store.getState>
 export type AppDispatch = typeof store.dispatch
 
@@ -31,4 +42,4 @@ export type AppThunk<ReturnType = void> = ThunkAction<
   Action<string>
 >
 
-export default store
+export const wrapper = createWrapper(makeStore)
