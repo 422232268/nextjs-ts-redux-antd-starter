@@ -49,23 +49,26 @@ function getItem(
 //   pathname: '/articles',
 // },
 const items: MenuItem[] = [
-  getItem('Option 1', '/user', <PieChartOutlined />),
-  getItem('Option 2', '/', <DesktopOutlined />),
-  getItem('Option 3', '/articles', <ContainerOutlined />),
+  getItem('用户查询', '/user', <PieChartOutlined />),
+  getItem('消费记录', '/spending', <DesktopOutlined />),
+  getItem('卡片查询', '/credit', <ContainerOutlined />),
+  getItem('收单查询', '/bill', <ContainerOutlined />),
+  getItem('文章管理', '/article', <ContainerOutlined />),
+  getItem('个人信息', '/info', <ContainerOutlined />),
 
-  getItem('Navigation One', 'sub1', <MailOutlined />, [
-    getItem('Option 5', '5'),
-    getItem('Option 6', '6'),
-    getItem('Option 7', '7'),
-    getItem('Option 8', '8'),
-  ]),
+  // getItem('收单查询', 'sub1', <MailOutlined />, [
+  //   getItem('个人信息编辑', '5'),
+  //   getItem('文章管理', '6'),
+  //   getItem('Option 7', '7'),
+  //   getItem('Option 8', '8'),
+  // ]),
 
-  getItem('Navigation Two', 'sub2', <AppstoreOutlined />, [
-    getItem('Option 9', '9'),
-    getItem('Option 10', '10'),
+  // getItem('Navigation Two', 'sub2', <AppstoreOutlined />, [
+  //   getItem('Option 9', '9'),
+  //   getItem('Option 10', '10'),
 
-    getItem('Submenu', 'sub3', null, [getItem('Option 11', '11'), getItem('Option 12', '12')]),
-  ]),
+  //   getItem('Submenu', 'sub3', null, [getItem('Option 11', '11'), getItem('Option 12', '12')]),
+  // ]),
 ];
 const NavMenu: FC<Props> = ({ menuItems }) => {
   console.log('menuItems', menuItems)
